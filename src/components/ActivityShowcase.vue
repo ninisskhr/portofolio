@@ -246,9 +246,43 @@ onBeforeUnmount(() => {
             </p>
 
             <div class="mt-5 flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400 sm:gap-3">
-              <span class="text-slate-300 dark:text-white/20">•</span>
-              <span>{{ activeItem.role }}</span>
+            <span class="text-slate-300 dark:text-white/20">•</span>
+            <span>{{ activeItem.role }}</span>
             </div>
+
+            <a
+              v-if="activeItem.pdfLink"
+              :href="activeItem.pdfLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex w-fit items-center rounded-full border border-slate-300 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 dark:hover:bg-sky-500/10 dark:hover:text-sky-300"
+            >
+              {{ activeItem.pdfLabel || 'View PDF' }}
+            </a>
+            <a
+              v-if="activeItem.externalLink"
+              :href="activeItem.externalLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-3 inline-flex w-fit items-center rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700 shadow-sm transition hover:border-sky-300 hover:bg-sky-100 hover:text-sky-800 dark:border-sky-400/20 dark:bg-sky-500/10 dark:text-sky-300 dark:hover:bg-sky-500/20"
+            >
+              {{ activeItem.externalLabel || 'View Link' }}
+            </a>
+            <div
+            v-if="activeItem.documents?.length"
+            class="mt-4 flex flex-wrap gap-3"
+          >
+            <a
+              v-for="document in activeItem.documents"
+              :key="document.link"
+              :href="document.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-fit items-center rounded-full border border-slate-300 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 dark:hover:bg-sky-500/10 dark:hover:text-sky-300"
+            >
+              {{ document.label }}
+            </a>
+          </div>
 
             <div class="mt-auto border-slate-200 pt-5 dark:border-white/10 sm:pt-6">
               <p class="text-sm text-slate-500 dark:text-slate-400">

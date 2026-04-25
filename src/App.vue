@@ -220,7 +220,7 @@ const previousProjectPage = () => {
 
           <a
             :href="profile.cvLink"
-            download="CV-Bintang-Wahyu.pdf"
+            download="CV.pdf"
             class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
           >
             {{ profile.cvLabel }}
@@ -243,61 +243,114 @@ const previousProjectPage = () => {
         id="home"
         class="scroll-mt-24 mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pt-20"
       >
-        <div class="grid gap-16 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
-          <div class="space-y-8">
-            <div class="space-y-5">
-              <h1 class="max-w-3xl text-4xl font-black tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-4xl">
-                Hi, I am {{ profile.name }}
-              </h1>
+        <div class="relative overflow-hidden rounded-[2.8rem] border border-slate-200 bg-gradient-to-br from-white via-sky-50 to-indigo-50 px-6 py-10 shadow-[0_30px_90px_-35px_rgba(15,23,42,0.25)] dark:border-white/10 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 sm:px-8 lg:px-12 lg:py-14">
+          <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl dark:bg-sky-500/10"></div>
+          <div class="pointer-events-none absolute -bottom-28 -left-24 h-80 w-80 rounded-full bg-indigo-300/30 blur-3xl dark:bg-indigo-500/10"></div>
 
-              <p class="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">
-                {{ profile.summary }}
-              </p>
-            </div>
+          <div class="relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div class="space-y-7">
+              <div class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-sky-700 shadow-sm backdrop-blur dark:border-sky-400/20 dark:bg-sky-500/10 dark:text-sky-300">
+                <span class="h-2 w-2 rounded-full bg-sky-500"></span>
+                Information Systems Graduate
+              </div>
 
-            <div class="flex flex-wrap gap-4">
-              <a
-                :href="profile.cvLink"
-                download="CV-Bintang-Wahyu.pdf"
-                class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
-              >
-                {{ profile.cvLabel }}
-              </a>
+              <div class="space-y-5">
+                <p class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                  Hello, I am
+                </p>
 
-              <a
-                href="#projects"
-                class="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-                @click.prevent="scrollToSection('#projects')"
-              >
-                View Projects
-              </a>
+                <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+                  {{ profile.name }}
+                </h1>
 
-              <a
-                href="#contact"
-                class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700 dark:border-white/10 dark:bg-slate-900/80 dark:text-white dark:hover:border-sky-400 dark:hover:text-sky-300"
-                @click.prevent="scrollToSection('#contact')"
-              >
-                Contact Me
-              </a>
-            </div>
+                <p class="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+                  {{ profile.summary }}
+                </p>
+              </div>
+
+        <div class="grid gap-3 sm:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-sky-400/20">
+            <p class="text-xl font-black text-slate-950 dark:text-white">Client Focus</p>
+            <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+              User Needs & Coordination
+            </p>
           </div>
 
-          <div class="hidden md:flex items-center justify-center">
-            <div class="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px]">
-              <div class="absolute -inset-4 rounded-[2.8rem] bg-gradient-to-br from-sky-200/60 via-indigo-200/40 to-transparent blur-2xl dark:from-sky-500/20 dark:via-indigo-500/10 dark:to-transparent"></div>
+          <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-sky-400/20">
+            <p class="text-xl font-black text-slate-950 dark:text-white">Execution</p>
+            <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+              Documentation & Follow-up
+            </p>
+          </div>
 
-              <div class="hero-photo relative overflow-hidden rounded-[2.2rem] border border-white/60 bg-[#F4F7FB] p-4 shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] backdrop-blur dark:border-white/10 dark:bg-slate-900/80 sm:p-5 lg:rounded-[2.7rem] lg:p-6">
-                <img
-                  src="/activities/Profil2.jpeg"
-                  alt="Foto profil"
-                  class="h-[320px] w-full rounded-[2rem] object-cover sm:h-[380px] lg:h-[440px] lg:rounded-[2.2rem]"
-                />
+          <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-sky-400/20">
+            <p class="text-xl font-black text-slate-950 dark:text-white">Growth Mindset</p>
+            <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+              Learning & Problem Solving
+            </p>
+          </div>
+        </div>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  :href="profile.cvLink"
+                  download="CV-Khoirotun-Nisak.pdf"
+                  class="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-sky-600 dark:bg-white dark:text-slate-950 dark:hover:bg-sky-200"
+                >
+                  {{ profile.cvLabel }}
+                </a>
+
+                <a
+                  href="#projects"
+                  class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-sky-400 dark:hover:text-sky-300"
+                  @click.prevent="scrollToSection('#projects')"
+                >
+                  View Projects
+                </a>
+
+                <a
+                  href="#contact"
+                  class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-indigo-400 dark:hover:text-indigo-300"
+                  @click.prevent="scrollToSection('#contact')"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <div class="relative w-full max-w-[340px] lg:max-w-[400px]">
+                <div class="absolute -inset-5 rotate-6 rounded-[3rem] bg-gradient-to-br from-sky-200 via-indigo-200 to-white blur-sm dark:from-sky-500/20 dark:via-indigo-500/20 dark:to-transparent"></div>
+
+                <div class="relative rotate-2 overflow-hidden rounded-[2.8rem] border border-white/70 bg-white/70 p-4 shadow-[0_35px_90px_-30px_rgba(15,23,42,0.35)] backdrop-blur transition duration-500 hover:rotate-0 dark:border-white/10 dark:bg-white/5">
+                  <img
+                    src="/activities/Profil2.png"
+                    alt="Foto profil"
+                    class="h-[390px] w-full rounded-[2.3rem] object-cover lg:h-[460px]"
+                  />
+                </div>
+
+                <div class="absolute -bottom-5 -left-5 rounded-3xl border border-slate-200 bg-white/90 px-5 py-4 shadow-xl backdrop-blur dark:border-white/10 dark:bg-slate-900/90">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                    Based in
+                  </p>
+                  <p class="mt-1 text-sm font-bold text-slate-900 dark:text-white">
+                    {{ profile.location }}
+                  </p>
+                </div>
+
+                <div class="absolute -right-5 top-8 rounded-3xl border border-sky-200 bg-sky-50/90 px-5 py-4 shadow-xl backdrop-blur dark:border-sky-400/20 dark:bg-sky-500/10">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300">
+                    Focus
+                  </p>
+                  <p class="mt-1 text-sm font-bold text-slate-900 dark:text-white">
+                    Client & Solution
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <section
         id="experience"
         class="scroll-mt-24 mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 sm:pb-20 sm:pt-10 lg:px-8"
